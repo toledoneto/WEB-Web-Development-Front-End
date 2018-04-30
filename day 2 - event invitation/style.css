@@ -14,17 +14,15 @@
     background-repeat: no-repeat;
     /* Scale the background image to be as large as possible */
     background-size: cover;
-
 }
 
 .bg1 h1{
     color: #0080FF;
     text-align: center;
-    padding: 350px;
+    padding-top: 350px;
     font-family: 'Dancing Script', cursive;
     font-size: 50px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
 }
 
  /* barra de navegação */
