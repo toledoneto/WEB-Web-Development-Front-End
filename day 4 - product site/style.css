@@ -91,17 +91,47 @@ Order || Flex-grow || Flex-shrink || Flex-basis
 }
 
 .about{
+	
 	/*retira as pequnas bolinhas dos itens*/
 	list-style: none;
+	
+	/*transoforma em flex*/
 	display: flex;
+	/*alinha o conteúdo no centro*/
 	justify-content: center;
+	
+	/*flex: 50%;*/
+    /*determina que o tamanho máximo ocupado pela linha
+    será de x% da área da tela*/
+    max-width: 100%;
 }
 
 .about li{
 	border: 5px solid white;
+	
+/*	faz com que a área do texto seja quadrada, do tamanho
+	da área da foto*/
 	flex-basis: 350px;
+	
+	/*dá um espaço entre a foto e o texto*/
 	margin-left: 5px;
 	background-color: #0000ff;
+}
+
+/*CONTATO RESPONSIVO*/
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:45%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+
 }
 
 .icons{
@@ -116,6 +146,85 @@ Order || Flex-grow || Flex-shrink || Flex-basis
 	justify-content: center;
 }
 
+/* ============================================= */
+/* ================ tipografia ================= */
+/* ============================================= */
+
+.bg2 h1{
+	color: white;
+}
+
+.bg2 h3{
+	color: black;
+	padding-left: 15%;
+}
+
+.about p{
+	padding-left: 5px;
+}
+
+.foot h3{
+	color: black;
+	font-size: 10px;
+}
+
+.nomes{
+	background-color: blue;
+	text-align: center;
+	font-size: 24px;
+	color: white;
+}
+
+/* ============================================= */
+/* ============== Responsividade =============== */
+/* ============================================= */
+
+@media screen and (max-width: 64em) {
+	/*INDEX RESPONSIVO*/
+	.produtos{
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0px;
+
+	}
+
+	.prod{
+		margin: 5px;
+		padding: 0px;
+	}
+	
+	/*SOBRE RESPONSIVO*/
+	.about{
+		/*retira as pequnas bolinhas dos itens*/
+		list-style: none;
+		display: flex;
+		
+		/*faz com que a linha se quebre em diversas colunas*/
+		flex-wrap: wrap;
+		padding: 0px;
+
+	}
+
+	.about li{
+		margin: 2px;
+	}
+
+	.about img{
+		max-width: 100%;	
+	}
+
+	/*PRODUTOS RESPONSIVO*/
+	.products{
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0px;
+	}
+
+	.proc{
+		margin: 5px;
+		padding: 0px;
+	}
+}
 
 /* ============================================= */
 /* =========== formulário de contato =========== */
@@ -209,31 +318,20 @@ Order || Flex-grow || Flex-shrink || Flex-basis
     transition: border ease-in .15s
 }
 
-/* ============================================= */
-/* ================ tipografia ================= */
-/* ============================================= */
-
-.bg2 h1{
-	color: red;
+.btn-custom {
+	color: white;
+	border-radius: 500px;
+	-webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    padding: 10px 35px;
+    margin: 0px 15px;
+    text-transform: uppercase;
+    transition: background 0.4s, color 0.4s;
 }
 
-.bg2 h3{
-	color: red;
-	padding-left: 15%;
-}
+.btn-branco {
+	margin: 5px;
+	border: 2px solid white;
+	background: blue;
 
-.about p{
-	padding-left: 5px;
-}
-
-.foot h3{
-	color: black;
-	font-size: 10px;
-}
-
-.nomes{
-	background-color: blue;
-	text-align: center;
-	font-size: 24px;
-	color: red;
 }
