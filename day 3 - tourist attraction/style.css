@@ -1,29 +1,19 @@
 .navbar{
     border: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
     font-size: 12px;
     letter-spacing: 5px;
     background-color: lightblue;
 }
 
 #sobre{
-
-    /*background-image: linear-gradient(to right, transparent, white),
-                  url("img/igreja.jpg"); 
-    background-image: url(img/igreja.jpg), linear-gradient(to left, transparent , yellow);;
-    background-repeat: no-repeat;
-  background-size: cover;*/
     background-image: linear-gradient(to left, transparent, white),
                   url("img/igreja.jpg");
     min-height: 411px;
-    /* Set background image to fixed (don't scroll along with the page) */
-    /*background-attachment: fixed;*/
-    /* Center the background image */
     background-position: right;
     /* Set the background image to no repeat */
     background-repeat: no-repeat;
-
     background-size: 60% 100%;
 }
 
@@ -32,22 +22,12 @@
 }
 
 #praias{
-
-    /*background-image: linear-gradient(to right, transparent, white),
-                  url("img/igreja.jpg"); 
-    background-image: url(img/igreja.jpg), linear-gradient(to left, transparent , yellow);;
-    background-repeat: no-repeat;
-  background-size: cover;*/
     background-image: linear-gradient(to right, transparent, white),
                   url("img/praia.jpeg");
     min-height: 400px;
-    /* Set background image to fixed (don't scroll along with the page) */
-    /*background-attachment: fixed;*/
-    /* Center the background image */
     background-position: left;
     /* Set the background image to no repeat */
     background-repeat: no-repeat;
-
     background-size: 60% 100%;
 }
 
@@ -165,4 +145,32 @@
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+/*CONTATO RESPONSIVO*/
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:45%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+
+}
+
+.icons{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+.foot{
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
 }

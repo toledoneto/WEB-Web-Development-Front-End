@@ -51,7 +51,6 @@ que tenham um atributo position declarado
 .menu{
 	position: absolute;
 	background-color: black;
-	/*border: 3px solid lightblue;*/
 	width: 65%;
 	height: 100%;
 	z-index:2;
@@ -120,7 +119,7 @@ que tenham um atributo position declarado
 }
 [type=radio]:checked ~ label ~ .content {
   z-index: 5;
-  background-color: green;
+  /*background-color: green;*/
   color: white;
 }
 
@@ -129,34 +128,41 @@ que tenham um atributo position declarado
 /* ============================================= */
 
 .nav_tabs{
-		width: auto;
-		height: auto;
-		background-color: #fff;
+	width: auto;
+	height: auto;
+	background-color: #fff;
 
-	}
+}
 
-	.nav_tabs ul{
-		list-style: none;
-  		margin: 0px;
-	}
+/*cuida da aba de submenu como um todo*/
+.nav_tabs ul{
+	list-style: none;
+		margin: 0px;
 
-	.nav_tabs ul li{
-		float: left;
+}
 
-	}
+/*cuida de cada item da aba de submenu*/
+.nav_tabs ul li{
+	float: left;
+	/*border: 3px solid pink;*/
 
+}
+
+/*cuida de cada item da aba de submenu*/
 .tab_label{
 	display: block;
 	/*cor de fundo da tab no submenu*/
 	background-color: #363b48;
 	/*largura da tab no submenu*/
 	padding: 24px;
-	font-size: 20px;
+	/*font-size: 20px;
 	color:#fff;
 	cursor: pointer;
-	text-align: center;
+	text-align: center;*/
   	margin: 0px;
+
 }
+
 
 .nav_tabs .rd_tab { 
 	display:none;
@@ -176,7 +182,7 @@ que tenham um atributo position declarado
 	height: 89%;
 	width: 100%;
 	left: 0;
-	border: 3px solid purple;
+	/*border: 3px solid purple;*/
 	overflow:auto;
 
 }
@@ -184,19 +190,18 @@ que tenham um atributo position declarado
 .rd_tab:checked ~ .tab-content{
 	display: block;
 }
-.tab-content h2{
-	padding: 10px;
-	color: #87d3b7;
-}
-.tab-content article{
-	padding: 10px;
-	color: #555;
-}
 
 .submenu_item{
 	position: relative;
 	display: flex;
 	margin-bottom: 10px;
+}
+
+/* ============================================= */
+/* ============= FOTOS DO SUBMENU ============== */
+/* ============================================= */
+.submenu_foto img{
+	display: inherit;
 }
 
 /* ============================================= */
@@ -211,61 +216,80 @@ que tenham um atributo position declarado
 	color: red;
 }
 
+.tab_label{
+	font-size: 20px;
+	color:#fff;
+	cursor: pointer;
+	text-align: center;
+}
+
+.tab-content h2{
+	padding: 10px;
+	color: #87d3b7;
+}
+
+.tab-content article{
+	padding: 10px;
+	color: #555;
+}
+
 /* ============================================= */
 /* ============== RESPONSIVIDADE =============== */
 /* ============================================= */
 
+/* max-width 1024px*/
 @media screen and (max-width: 64em) {
+	*{
+		margin:0px;
+		padding: 0px;
+	}
+
+	/*div mais externa, engloba todo o site*/
 	.bg_total{
 		position: absolute; 
-		background-color: gray;
-		/*border: 3px solid blue;*/
+		background-color: blue;
 		width: 100%;
 		height: 100%;
 		z-index:1;
 	}
 
+	/*div da barra superior, apenas o container*/
 	.barra_lateral{
-		position: absolute;
-		background-color: green;
+		position: relative;
+		background-color: purple;
 		padding: 0px;
-		/*border: 3px solid red;*/
-		width: 100%;
+		width: auto;
 		height: 9.5%;
 		z-index:2;
-
 		display: flex;
 		flex-direction: row;
-
-	/*
-	padding: 0px;*/
-	}
-
-	.nav_tabs{
-		width: auto;
-		height: auto;
-		background-color: #fff;
-		margin-left: 30px;
+		justify-content: space-around;
 
 	}
 
-	.tab-content{
-		background-color: #fff;
-		display: none;
+/*	.nav_menu{
 		position: absolute;
-		height: 89%;
-		width: 95%;
-		left: 0;
-		border: 3px solid red;
-		overflow:auto;
-		margin-left: 30px;
+		border: 10px solid purple;
+		width: 100%;
+		height: 15%;
+		z-index:2;
+	}*/
 
+	/*div abaixo do submenu com descrições dos itens*/
+	.menu{
+		position: relative;
+		background-color: black;
+		/*border: 10px solid lightblue;*/
+		/*width: 10%;*/
+		/*height: 100%;*/
+		z-index:2;
+		/*margin-left: 33%;*/
 	}
-
 
 	/* ============================================= */
 	/* ============ BARRA LATERAL FLEX ============= */
 	/* ============================================= */
+	
 	.escolhas_lateral{
 		display: flex;
 		flex-direction: column;
@@ -273,10 +297,10 @@ que tenham um atributo position declarado
 		align-items: center;
 	}
 
+	/*controla cada item da barra superior*/
 	.item_lateral{
 		/*border: 3px solid gold;*/
 		flex: 1;
-
 		/*Apenas para centralizar o texto*/
 		display: flex;
 		justify-content: center;
@@ -286,44 +310,37 @@ que tenham um atributo position declarado
 	/*imagens nas opções da barra lateral*/
 	#item_almoco{
 		background-image: none;
-		/*background-size: 100% 100%;*/
 		background-color: brown;
-
 	}
 
 	#item_janta{
 		background-image: none;
-		/*background-size: 100% 100%;*/
 		background-color: brown;
 	}
 
 	#item_bar{
 		background-image: none;
-		/*background-size: 100% 100%;*/
 		background-color: brown;
 	}
 
 	/* ============================================= */
 	/* =================== TABS ==================== */
 	/* ============================================= */
+	
 	.tab [type=radio] {
 		display: none;   
 	}
+	
+	/*controla a área de submenu, com aba e tudo*/
 	.content {
-		/*border: 3px solid purple;*/
-
 		position: absolute;
-		/*background-color: black;*/
-		width: 100%;
-		/*height: 100%*/
-		/*height: 100%;*/
-		/*z-index:2;*/
-		/*margin-left: 35%;*/
+		width: 104%;
 		left: -35%;
 		height: 940%;
 		bottom: 0;
 		top:105%;
- 		/*overflow:auto;*/
+		/*border: 10px solid red;*/
+
 	}
 
 	[type=radio]:checked ~ label {
@@ -332,20 +349,560 @@ que tenham um atributo position declarado
 	  z-index: 2;
 	}
 	[type=radio]:checked ~ label ~ .content {
-	  z-index: 5;
-	  background-color: green;
+	  z-index: 3;
+	  /*background-color: green;*/
 	  color: white;
+	}
+
+/* ============================================= */
+/* =============== TABS SUBMENU ================ */
+/* ============================================= */
+
+	/*div abaixo da barra de navegação do submenu*/
+	.nav_tabs{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		margin-left: 0px;
+		background-color: #fff;
+		justify-content: space-between;
+	}
+
+	/*cuida da aba de submenu como um todo*/
+	.nav_tabs ul{
+		list-style: none;
+		margin: 0px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/*cuida de cada item da aba de submenu*/
+	.nav_tabs ul li{
+		flex: 1 1 auto;
+	}
+
+	/*cuida de cada item da aba de submenu*/
+	.tab_label{
+		display: block;
+		/*cor de fundo da tab no submenu*/
+		background-color: #363b48;
+		padding: 10px;
+	  	margin: 0px;
+	}
+
+	.nav_tabs .rd_tab { 
+		display:none;
+		position: absolute;
+	}
+
+	.nav_tabs .rd_tab:checked ~ label { 
+		/*cor de fundo da tab no submenu escolhida*/
+		background-color: #e54e43;
+		color:#fff;
+	}
+
+	/*controla o conteúdo das abas de submenu*/
+	.tab-content{
+		background-color: #fff;
+		display: none;
+		position: absolute;
+		height: auto;
+		width: auto;
+		overflow:auto;
+		padding: 0px;
+		margin-left: 0px;
+	}
+
+	.rd_tab:checked ~ .tab-content{
+		display: block;
+	}
+
+	.submenu_item{
+		position: relative;
+		display: flex;
+		margin-bottom: 10px;
 	}
 
 	/* ============================================= */
 	/* ================ TIPOGRAFIA ================= */
 	/* ============================================= */
 	.item_lateral h1{
-		color: blue;
-		font-size: 50px;
+		color: white;
+		font-size: 25px;
 	}
 
-	.item_lateral h1:hover{
-		color: red;
+	.tab_label{
+		font-size: 15px;
+		color:#fff;
+		cursor: pointer;
+		text-align: center;
 	}
+
+	.tab-content h2{
+		padding: 10px;
+		color: #87d3b7;
+	}
+
+	.tab-content article{
+		padding: 10px;
+		color: #555;
+	}
+
+}
+
+/*max-width: 640px*/
+@media screen and (max-width: 40em) {
+	*{
+		margin:0px;
+		padding: 0px;
+	}
+
+	/*div mais externa, engloba todo o site*/
+	.bg_total{
+		position: absolute; 
+		background-color: blue;
+		width: 100%;
+		height: 100%;
+		z-index:1;
+	}
+
+	/*div da barra superior, apenas o container*/
+	.barra_lateral{
+		position: relative;
+		background-color: purple;
+		padding: 0px;
+		width: auto;
+		height: 9.5%;
+		z-index:2;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+	}
+
+/*	.nav_menu{
+		position: absolute;
+		border: 10px solid purple;
+		width: 100%;
+		height: 15%;
+		z-index:2;
+	}*/
+
+	/*div abaixo do submenu com descrições dos itens*/
+	.menu{
+		position: relative;
+		background-color: black;
+		/*border: 10px solid lightblue;*/
+		/*width: 10%;*/
+		/*height: 100%;*/
+		z-index:2;
+		/*margin-left: 33%;*/
+	}
+
+	/* ============================================= */
+	/* ============ BARRA LATERAL FLEX ============= */
+	/* ============================================= */
+	
+	.escolhas_lateral{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/*controla cada item da barra superior*/
+	.item_lateral{
+		/*border: 3px solid gold;*/
+		flex: 1;
+		/*Apenas para centralizar o texto*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 3px solid green;
+
+	}
+
+	/*imagens nas opções da barra lateral*/
+	#item_almoco{
+		background-image: none;
+		background-color: brown;
+	}
+
+	#item_janta{
+		background-image: none;
+		background-color: brown;
+	}
+
+	#item_bar{
+		background-image: none;
+		background-color: brown;
+	}
+
+	/* ============================================= */
+	/* =================== TABS ==================== */
+	/* ============================================= */
+	
+	.tab [type=radio] {
+		display: none;   
+	}
+	
+	/*controla a área de submenu, com aba e tudo*/
+	.content {
+		position: absolute;
+		width: 104%;
+		left: -35%;
+		height: 940%;
+		bottom: 0;
+		top:105%;
+		/*border: 10px solid red;*/
+
+	}
+
+	[type=radio]:checked ~ label {
+	  /*background: white;*/
+	  /*border-bottom: 1px solid white;*/
+	  z-index: 2;
+	}
+	[type=radio]:checked ~ label ~ .content {
+	  z-index: 3;
+	  /*background-color: green;*/
+	  color: white;
+	}
+
+/* ============================================= */
+/* =============== TABS SUBMENU ================ */
+/* ============================================= */
+
+	/*div abaixo da barra de navegação do submenu*/
+	.nav_tabs{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		margin-left: 0px;
+		background-color: #fff;
+		justify-content: space-between;
+	}
+
+	/*cuida da aba de submenu como um todo*/
+	.nav_tabs ul{
+		list-style: none;
+		margin: 0px;
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	/*cuida de cada item da aba de submenu*/
+	.nav_tabs ul li{
+		flex: 1 1 auto;
+	}
+
+	/*cuida de cada item da aba de submenu*/
+	.tab_label{
+		display: block;
+		/*cor de fundo da tab no submenu*/
+		background-color: #363b48;
+		padding: 10px;
+	  	margin: 0px;
+
+	}
+
+	.nav_tabs .rd_tab { 
+		display:none;
+		position: absolute;
+
+	}
+
+	.nav_tabs .rd_tab:checked ~ label { 
+		/*cor de fundo da tab no submenu escolhida*/
+		background-color: #e54e43;
+		color:#fff;
+	}
+
+	/*controla o conteúdo das abas de submenu*/
+	.tab-content{
+		background-color: #fff;
+		display: none;
+		position: absolute;
+		height: auto;
+		width: auto;
+		overflow:auto;
+		padding: 0px;
+		margin-left: 0px;
+
+	}
+
+	.rd_tab:checked ~ .tab-content{
+		display: block;
+	}
+
+	.submenu_item{
+		position: relative;
+		display: flex;
+		margin-bottom: 10px;
+	}
+
+	/* ============================================= */
+	/* ============= FOTOS DO SUBMENU ============== */
+	/* ============================================= */
+	.submenu_foto img{
+		display: none;
+/*		height: 100px;
+		width: 100px;*/
+
+	}
+
+	/* ============================================= */
+	/* ================ TIPOGRAFIA ================= */
+	/* ============================================= */
+	.item_lateral h1{
+		color: white;
+		font-size: 25px;
+	}
+
+	.tab_label{
+		font-size: 15px;
+		color:#fff;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.tab-content h2{
+		padding: 10px;
+		color: #87d3b7;
+	}
+
+	.tab-content article{
+		padding: 10px;
+		color: #555;
+	}
+
+}
+
+@media all and (max-width: 480px){
+	*{
+		margin:0px;
+		padding: 0px;
+	}
+
+	/*div mais externa, engloba todo o site*/
+	.bg_total{
+		position: absolute; 
+		background-color: blue;
+		width: 100%;
+		height: 100%;
+		z-index:1;
+	}
+
+	/*div da barra superior, apenas o container*/
+	.barra_lateral{
+		position: relative;
+		background-color: purple;
+		padding: 0px;
+		width: auto;
+		height: 9.5%;
+		z-index:2;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+	}
+
+/*	.nav_menu{
+		position: absolute;
+		border: 10px solid purple;
+		width: 100%;
+		height: 15%;
+		z-index:2;
+	}*/
+
+	/*div abaixo do submenu com descrições dos itens*/
+	.menu{
+		position: relative;
+		background-color: black;
+		/*border: 10px solid lightblue;*/
+		/*width: 10%;*/
+		/*height: 100%;*/
+		z-index:2;
+		/*margin-left: 33%;*/
+	}
+
+	/* ============================================= */
+	/* ============ BARRA LATERAL FLEX ============= */
+	/* ============================================= */
+	
+	.escolhas_lateral{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/*controla cada item da barra superior*/
+	.item_lateral{
+		/*border: 3px solid gold;*/
+		flex: 1;
+		/*Apenas para centralizar o texto*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 3px solid green;
+
+	}
+
+	/*imagens nas opções da barra lateral*/
+	#item_almoco{
+		background-image: none;
+		background-color: brown;
+	}
+
+	#item_janta{
+		background-image: none;
+		background-color: brown;
+	}
+
+	#item_bar{
+		background-image: none;
+		background-color: brown;
+	}
+
+	/* ============================================= */
+	/* =================== TABS ==================== */
+	/* ============================================= */
+	
+	.tab [type=radio] {
+		display: none;   
+	}
+	
+	/*controla a área de submenu, com aba e tudo*/
+	.content {
+		position: absolute;
+		width: 104%;
+		left: -35%;
+		height: 940%;
+		bottom: 0;
+		top:105%;
+		/*border: 10px solid red;*/
+
+	}
+
+	[type=radio]:checked ~ label {
+	  /*background: white;*/
+	  /*border-bottom: 1px solid white;*/
+	  z-index: 2;
+	}
+	[type=radio]:checked ~ label ~ .content {
+	  z-index: 3;
+	  /*background-color: green;*/
+	  color: white;
+	}
+
+/* ============================================= */
+/* =============== TABS SUBMENU ================ */
+/* ============================================= */
+
+	/*div abaixo da barra de navegação do submenu*/
+	.nav_tabs{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		margin-left: 0px;
+		background-color: #fff;
+		justify-content: space-between;
+	}
+
+	/*cuida da aba de submenu como um todo*/
+	.nav_tabs ul{
+		list-style: none;
+		margin: 0px;
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	/*cuida de cada item da aba de submenu*/
+	.nav_tabs ul li{
+		flex: 1 1 auto;
+	}
+
+	/*cuida de cada item da aba de submenu*/
+	.tab_label{
+		display: block;
+		/*cor de fundo da tab no submenu*/
+		background-color: #363b48;
+		padding: 10px;
+	  	margin: 0px;
+
+	}
+
+	.nav_tabs .rd_tab { 
+		display:none;
+		position: absolute;
+
+	}
+
+	.nav_tabs .rd_tab:checked ~ label { 
+		/*cor de fundo da tab no submenu escolhida*/
+		background-color: #e54e43;
+		color:#fff;
+	}
+
+	/*controla o conteúdo das abas de submenu*/
+	.tab-content{
+		background-color: #fff;
+		display: none;
+		position: absolute;
+		height: auto;
+		width: auto;
+		overflow:auto;
+		padding: 0px;
+		margin-left: 0px;
+
+	}
+
+	.rd_tab:checked ~ .tab-content{
+		display: block;
+	}
+
+	.submenu_item{
+		position: relative;
+		display: flex;
+		margin-bottom: 10px;
+	}
+
+	/* ============================================= */
+	/* ============= FOTOS DO SUBMENU ============== */
+	/* ============================================= */
+	.submenu_foto img{
+		display: none;
+/*		height: 100px;
+		width: 100px;*/
+
+	}
+
+	/* ============================================= */
+	/* ================ TIPOGRAFIA ================= */
+	/* ============================================= */
+	.item_lateral h1{
+		color: white;
+		font-size: 25px;
+	}
+
+	.tab_label{
+		font-size: 15px;
+		color:#fff;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.tab-content h2{
+		padding: 10px;
+		color: #87d3b7;
+	}
+
+	.tab-content article{
+		padding: 10px;
+		color: #555;
+	}
+
 }
