@@ -1,5 +1,5 @@
-# Menu de restaurante / Restaurant Menu
+# Site de autor/livro / Author/book website
 
-Desafio 5 - Criar site de Menu de restaurante
+Desafio 5 - Criar site sobre autor/livro
 
-Challenge 5 - Create a Restaurant Menu
+Challenge 5 - Create an author/book website
